@@ -1,7 +1,7 @@
 namespace HomeMan.API.Helpers;
 
 using Microsoft.EntityFrameworkCore;
-using HomeMan.API.Entities;
+using HomeMan.API.Models;
 using Npgsql;
 
 public class DataContext : DbContext
@@ -25,6 +25,8 @@ public class DataContext : DbContext
         options.UseNpgsql(builder.ConnectionString);
     }
 
-    public DbSet<PowerConsumption> PowerConsumptions { get; set; }
-    public DbSet<WaterConsumption> WaterConsumptions { get; set; }
+    public DbSet<Consumption> Consumptions { get; set; }
+    public DbSet<ConsumptionPrice> ConsumptionPrices { get; set; }
+    public DbSet<ConsumptionType> ConsumptionTypes { get; set; }
+    public DbSet<ConsumptionUnit> ConsumptionUnits { get; set; }
 }
